@@ -4,103 +4,45 @@ body{font:16px Arial,sans-serif;background:var(--l);color:var(--d);line-height:1
 .container{max-width:1100px;margin:auto;padding:20px}
 
 /* HERO */
-.hero{
-  background:linear-gradient(#0008,#0008),url("../images/friendly.jpg") center/cover;
-  color:#fff;padding:80px 20px;text-align:center
-}
-.hero h1{font-size:36px;margin-bottom:10px}
+.hero{background:linear-gradient(#0008,#0008),url("../images/friendly.jpg") center/cover;color:#fff;padding:80px 20px;text-align:center}
+.hero h1{font-size:36px}
 .hero p{font-size:18px}
 
 /* GRID / CARDS */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:30px}
-.card,.testimonial{
-  background:#fff;padding:20px;border-radius:16px;
-  box-shadow:0 10px 25px #0001
-}
-.card{background:#f9fccb}
+.info-grid,.auto-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:30px}
+.card,.testimonial{background:#fff;border-radius:16px;box-shadow:0 10px 25px #0001}
+.card{background:#f9fccb;padding:20px}
 .card-img{width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:12px}
 
-/* EXISTING SLIDER (UNCHANGED) */
+/* SLIDER */
 .slider{overflow:hidden;border-radius:16px;margin-top:20px}
 .slides{display:flex;animation:s 12s infinite}
 .slides img{width:100%;height:250px;object-fit:cover}
-@keyframes s{
-  0%{transform:translateX(0)}
-  33%{transform:translateX(-100%)}
-  66%{transform:translateX(-200%)}
-  100%{transform:translateX(0)}
-}
+@keyframes s{0%{transform:translateX(0)}33%{transform:translateX(-100%)}66%{transform:translateX(-200%)}100%{transform:translateX(0)}}
 
-/* NEW AUTO-SCROLL CARD SLIDER (SAFE ADDITION) */
-.slidera{overflow:hidden;width:100%;margin-top:20px}
+/* AUTO SCROLL */
+.slidera{overflow:hidden;margin-top:20px}
 .slidea-track{display:flex;animation:scroll 40s linear infinite}
-.carda{
-  flex:0 0 200px;height:150px;margin:10px;
-  border-radius:8px;overflow:hidden
-}
+.carda{flex:0 0 200px;height:150px;margin:10px;border-radius:8px;overflow:hidden}
 .carda img{width:100%;height:100%;object-fit:cover}
 .slidera:hover .slidea-track{animation-play-state:paused}
-
-@keyframes scroll{
-  to{transform:translateX(-200%)}
-}
+@keyframes scroll{to{transform:translateX(-200%)}}
 
 /* FORM */
-form input,form textarea,form button{
-  width:100%;padding:10px;margin-top:10px;
-  border-radius:8px;border:1px solid #ccc
-}
+form :is(input,textarea,button){width:100%;padding:10px;margin-top:10px;border-radius:8px;border:1px solid #ccc}
 form button{background:var(--p);color:#fff;border:0;font-size:16px}
 
 /* MOBILE BAR */
-.mobile-bar{
-  position:fixed;bottom:0;left:0;width:100%;
-  display:flex;background:#fff;box-shadow:0 -5px 15px #0003
-}
-.mobile-bar a{
-  flex:1;text-align:center;padding:10px;
-  color:#fff;font-weight:700;text-decoration:none
-}
-.call{background:#16a34a}
-.whatsapp{background:#22c55e}
-.contact{background:var(--p)}
+.mobile-bar{position:fixed;bottom:0;left:0;width:100%;display:flex;background:#fff;box-shadow:0 -5px 15px #0003}
+.mobile-bar a{flex:1;text-align:center;padding:10px;color:#fff;font-weight:700;text-decoration:none}
+.call{background:#16a34a}.whatsapp{background:#22c55e}.contact{background:var(--p)}
 @media(min-width:768px){.mobile-bar{display:none}}
-/* ================================
-   ISOLATED AUTO IMAGE CARD SYSTEM
-   ================================ */
 
-.auto-cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:20px
-}
-
-.auto-cards .card{
-  background:#fff;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 10px 25px #0001
-}
-
-.auto-cards .media{
-  height:280px;
-  background:#e5e7eb;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden
-}
-
-.auto-cards img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  transition:opacity .6s
-}
-
-.auto-cards .fade-out{opacity:0}
-.auto-cards .fade-in{opacity:1}
-
+/* AUTO IMAGE CARD SYSTEM */
+.auto-cards .card{overflow:hidden}
+.auto-cards .media{height:280px;background:#e5e7eb;display:grid;place-items:center;overflow:hidden}
+.auto-cards img{width:100%;height:100%;object-fit:contain;transition:opacity .6s}
+.fade-out{opacity:0}.fade-in{opacity:1}
 .auto-cards .info{padding:12px}
 .auto-cards h3{font-size:15px}
 .auto-cards p{color:#16a34a;font-weight:700}
