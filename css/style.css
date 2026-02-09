@@ -65,3 +65,42 @@ form button{background:var(--p);color:#fff;border:0;font-size:16px}
 .whatsapp{background:#22c55e}
 .contact{background:var(--p)}
 @media(min-width:768px){.mobile-bar{display:none}}
+/* ================================
+   ISOLATED AUTO IMAGE CARD SYSTEM
+   ================================ */
+
+.auto-cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:20px
+}
+
+.auto-cards .card{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 25px #0001
+}
+
+.auto-cards .media{
+  height:280px;
+  background:#e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden
+}
+
+.auto-cards img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:opacity .6s
+}
+
+.auto-cards .fade-out{opacity:0}
+.auto-cards .fade-in{opacity:1}
+
+.auto-cards .info{padding:12px}
+.auto-cards h3{font-size:15px}
+.auto-cards p{color:#16a34a;font-weight:700}
