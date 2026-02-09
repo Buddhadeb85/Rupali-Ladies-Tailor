@@ -42,7 +42,7 @@ body{font:16px Arial,sans-serif;background:var(--l);color:var(--d);line-height:1
 .slidera:hover .slidea-track{animation-play-state:paused}
 
 @keyframes scroll{
-  to{transform:translateX(-50%)}
+  to{transform:translateX(-200%)}
 }
 
 /* FORM */
